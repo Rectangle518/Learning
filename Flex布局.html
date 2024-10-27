@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex 布局</title>
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        background-color: #eee;
+      }
+      /* * {
+        border: 1px solid black;
+      } 
+      .shadow {
+        box-shadow: 
+      } */
+      .flex {
+        display: flex;
+      }
+      .white {
+        background-color: white;
+      }
+      .flex1 {
+        flex: 1;
+      }
+      .column {
+        flex-direction: column;
+      }
+      .mar8 {
+        margin: 8px;
+      }
+      .marr8 {
+        margin-right: 8px;
+      }
+      .mart8 {
+        margin-top: 8px;
+      }
+      .daoHang {
+        padding: 10px 20px;
+        border-bottom: 1px solid #999;
+        font-size: 14px;
+        color: #666;
+      }
+      /* 当屏幕宽度小于600px时要改变的CSS */
+      @media (max-width: 600px) {
+        .ceBian {
+            display: none;
+        }
+        .neiRong {
+            flex-direction: column;
+        }
+        .shuJuQu {
+            flex-direction: column;
+        }
+        .youQu {
+            margin-left: 8px;
+        }
+        .shuJu {
+            margin: 0 0 8px;
+            flex: auto;
+        }
+      }
+    </style>
+  </head>
+  <body class="flex">
+    <!--侧边栏-->
+    <div style="width: 200px; z-index: 2; border-right: 2px solid #999;" class="white">
+      <!--头像栏-->
+      <div
+        style="padding: 10px; align-items: center; justify-content: center; border-bottom: 1px solid #999; "
+        class="flex"
+      >
+        <img
+          src="https://s21.ax1x.com/2024/10/26/pA0kTOg.jpg"
+          alt="远航扬帆.jpg"
+          width="40px"
+        />
+        <div style="margin-left: 8px;">远航扬帆</div>
+      </div>
+      <!--导航栏-->
+      <div class="daoHang">导航</div>
+      <div class="daoHang">导航</div>
+      <div class="daoHang">导航</div>
+      <div class="daoHang">导航</div>
+      <div class="daoHang">导航</div>
+      <div class="daoHang">导航</div>
+    </div>
+    <!--主区域-->
+    <div class="flex flex1 column">
+      <!--头部栏-->
+      <div style="height: 60px; z-index: 1; border-bottom: 1px solid #999;" class="white"></div>
+      <!--内容区-->
+      <div style="overflow: auto" class="neiRong flex flex1">
+        <!--左区-->
+        <div style="flex: 3" class="flex column mar8">
+          <!--数据区-->
+          <div class="shuJuQu flex">
+            <!--数据块-->
+            <div style="height: 100px" class="shuJu flex1 marr8 white"></div>
+            <div style="height: 100px" class="shuJu flex1 marr8 white"></div>
+            <div style="height: 100px" class="shuJu flex1 white"></div>
+          </div>
+          <!--列表区-->
+          <div class="flex column">
+            <!--列表项-->
+            <div style="height: 160px" class="white mart8"></div>
+            <div style="height: 160px" class="white mart8"></div>
+            <div style="height: 160px" class="white mart8"></div>
+            <div style="height: 160px" class="white mart8"></div>
+            <div style="height: 160px" class="white mart8"></div>
+            <div style="height: 160px" class="white mart8"></div>
+            <div style="height: 160px" class="white mart8"></div>
+          </div>
+        </div>
+        <!--右区-->
+        <div style="flex: 1" class="youQu flex column marr8 mart8">
+          <!--提示区-->
+          <div style="height: 200px" class="white"></div>
+          <!--消息区-->
+          <div style="height: 400px" class="white mart8"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
