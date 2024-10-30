@@ -95,5 +95,68 @@
           document.getElementById("output_16").innerText = "十六进制:  0x" + s_16;
         }
     </script>
+
+    <!--输入框2-->
+    <input type="text" id="i2" placeholder="请输入一个二进制数" />
+    <button onclick="processInput2()" class="button"><span>确认</span></button>
+    <p id="output_2_10">十进制</p>
+    <p id="output_2_8">八进制</p>
+    <p id="output_2_16">十六进制</p>
+    <script>
+        function processInput2() {
+          // 获取输入框的值
+          let userInput_2 = document.getElementById("i2").value;
+          let number2 = parseInt(userInput_2, 2);
+          // 处理输入的数据
+          let s_02_10 = number2;
+          let s_02_08 = number2.toString(8);
+          let s_02_16 = number2.toString(16).toUpperCase();
+          document.getElementById("output_2_10").innerText = "十进制:  " + s_02_10;
+          document.getElementById("output_2_8").innerText = "八进制:  0" + s_02_08;
+          document.getElementById("output_2_16").innerText = "十六进制:  0x" + s_02_16;
+        }
+    </script>
+
+    <!--输入框8-->
+    <input type="text" id="i8" placeholder="请输入一个八进制数" />
+    <button onclick="processInput8()" class="button"><span>确认</span></button>
+    <p id="output_8_10">十进制</p>
+    <p id="output_8_2">二进制</p>
+    <p id="output_8_16">十六进制</p>
+    <script>
+        function processInput8() {
+          // 获取输入框的值
+          let userInput_8 = document.getElementById("i8").value;
+          let number8 = parseInt(userInput_8, 8);
+          // 处理输入的数据
+          let s_08_10 = number8;
+          let s_08_02 = number8.toString(2);
+          let s_08_16 = number8.toString(16).toUpperCase();
+          document.getElementById("output_8_10").innerText = "十进制:  " + s_08_10;
+          document.getElementById("output_8_2").innerText = "二进制:  " + s_08_02;
+          document.getElementById("output_8_16").innerText = "十六进制:  0x" + s_08_16;
+        }
+    </script>
+
+    <!--输入框16-->
+    <input type="text" id="i16" placeholder="请输入一个十六进制数" />
+    <button onclick="processInput16()" class="button"><span>确认</span></button>
+    <p id="output_16_10">十进制</p>
+    <p id="output_16_2">二进制</p>
+    <p id="output_16_8">八进制</p>
+    <script>
+        function processInput16() {
+          // 获取输入框的值
+          let userInput_16 = document.getElementById("i16").value;
+          let number16 = parseInt(userInput_16, 16);
+          // 处理输入的数据
+          let s_16_10 = number16;
+          let s_16_02 = number16.toString(2);
+          let s_16_08 = number16.toString(8);
+          document.getElementById("output_16_10").innerText = "十进制:  " + s_16_10;
+          document.getElementById("output_16_2").innerText = "二进制:  " + s_16_02;
+          document.getElementById("output_16_8").innerText = "八进制:  0x" + s_16_08;
+        }
+    </script>
   </body>
 </html>
