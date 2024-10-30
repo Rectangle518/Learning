@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>进制转换工具</title>
+    <style>
+      .Grey {
+        background-color: #f1f1f1;
+        text-align: center;
+        padding: 50px;
+      }
+
+      /* 输入框的基本样式 */
+      input[type="text"] {
+        width: 300px; /* 宽度 */
+        padding: 10px; /* 内边距 */
+        border: 2px solid #dcdcdc; /* 边框 */
+        border-radius: 5px; /* 圆角 */
+        font-size: 16px; /* 字体大小 */
+        transition: border-color 0.3s; /* 边框颜色过渡效果 */
+      }
+
+      /* 输入框获得焦点时的样式 */
+      input[type="text"]:focus {
+        border-color: #00bfff; /* 焦点时的边框颜色 */
+        outline: none; /* 去掉默认的outline */
+      }
+
+      /* 输入框的占位符样式 */
+      input[type="text"]::placeholder {
+        color: #999; /* 占位符颜色 */
+        font-style: italic; /* 占位符样式 */
+      }
+
+      .button {
+        display: inline-block;
+        border-radius: 4px;
+        background-color: #555555;
+        border: none;
+        color: #ffffff;
+        text-align: center;
+        font-size: 18px;
+        padding: 10px;
+        width: 180px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+      }
+      .button span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+      }
+      .button span:after {
+        content: "»";
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+      }
+      .button:hover span {
+        padding-right: 25px;
+      }
+      .button:hover span:after {
+        opacity: 1;
+        right: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!--标题区-->
+    <div class="Grey">
+      <h1>进制转换工具</h1>
+    </div>
+    <!--输入框10-->
+    <input type="text" id="inputBox" placeholder="请输入一个十进制数" />
+    <button onclick="processInput()" class="button"><span>确认</span></button>
+    <p id="output_2">二进制</p>
+    <p id="output_8">八进制</p>
+    <p id="output_16">十六进制</p>
+    <script>
+        function processInput() {
+          // 获取输入框的值
+          let userInput = document.getElementById("inputBox").value;
+          let number = Number(userInput);
+          // 处理输入的数据
+          let s_02 = number.toString(2);
+          let s_08 = number.toString(8);
+          let s_16 = number.toString(16).toUpperCase();
+          document.getElementById("output_2").innerText = "二进制:  " + s_02;
+          document.getElementById("output_8").innerText = "八进制:  0" + s_08;
+          document.getElementById("output_16").innerText = "十六进制:  0x" + s_16;
+        }
+    </script>
+  </body>
+</html>
